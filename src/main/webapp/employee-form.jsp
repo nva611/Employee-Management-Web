@@ -6,7 +6,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 Employee employee = (Employee) request.getAttribute("employee");
-Date date = (Date) request.getAttribute("date");
+String date = String.valueOf(request.getAttribute("date"));
 %>
 <html>
 <head>

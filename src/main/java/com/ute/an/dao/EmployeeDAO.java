@@ -175,6 +175,7 @@ public class EmployeeDAO {
 		}
 		return users;
 	}
+	
 	private void printSQLException(SQLException ex) {
 		for (Throwable e : ex) {
 			if (e instanceof SQLException) {

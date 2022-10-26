@@ -88,7 +88,7 @@ public class EmployeeServlet extends HttpServlet {
 		String status = request.getParameter("status");
 
 		Employee book = new Employee(id, name, sex, bDate, homeTown, phone, address, status);
-		System.out.print("BOOOK" + book.getbDate());
+		
 		employeeDAO.updateEmployee(book);
 		response.sendRedirect("list");
 	}
@@ -161,16 +161,18 @@ public class EmployeeServlet extends HttpServlet {
 			throws SQLException, ServletException, IOException {
 		String id = request.getParameter("id");
 		Employee employee = employeeDAO.selectEmployee(id);
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("employee-form.jsp");
-		java.util.Date date = null;
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = null;
 		try {
 			date = formatter.parse(employee.getbDate());
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		request.setAttribute("date", date);
+		String bDate = fmt.format(date);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("employee-form.jsp");
+		request.setAttribute("date", bDate);
 		request.setAttribute("employee", employee);
 		dispatcher.forward(request, response);
 

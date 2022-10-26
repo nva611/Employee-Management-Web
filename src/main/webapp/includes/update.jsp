@@ -1,5 +1,5 @@
+
 <form action="update" method="post">
-                 
                 <fieldset class="form-group">
                     <label>Id</label> 
                     <input type="text" name="id" class="form-control" value="<%= employee.getId() %>" readonly/>
@@ -42,26 +42,26 @@
                 
                 <fieldset class="form-group" style="border-width:10px">
                     <div style="border: solid; border-width: 1px;">
-	                    <label>Your Birth Date</label> 
+	                    <!-- <label>Your Birth Date</label> 
 	                     <div display="flex"  class="form-group" >     
 	                        <label>Date</label>               
-	                        <input type="text" style="width:80px" class="" value="<%= date.getDate() %>"
+	                        <input type="text" style="width:80px" class="" value=""
 	                            name="date" readonly>
 	                            
 	                        <label>Month</label>
-	                        <input type="text" style="width:80px" class="" value="<%= date.getMonth() + 1 %>"
+	                        <input type="text" style="width:80px" class="" value=""
 	                            name="month" readonly>
 	                            
 	                        <label>Year</label>
-	                        <input type="text" style="width:80px" class="" value="<%= date.getYear() + 1900 %>"
+	                        <input type="text" style="width:80px" class="" value=""
 	                            name="year" readonly>
-	                        </div> 
+	                        </div>  -->
                     </div>
                     <br>
                     <div display="flex" style="border: solid; border-width: 1px; padding: 3px;" class="form-group">
                     <label>Edit Birth date</label> 
-			            <input type=date style="width: 150px" class="" max="<%= java.time.LocalDate.now() %>"
-			                value="" name="bDate" required="required">
+			            <input type=date style="width: 150px" class="" value="<%= date %>" max="<%= java.time.LocalDate.now() %>"
+			                 name="bDate" required="required">
 			        </div>
                 </fieldset>
 

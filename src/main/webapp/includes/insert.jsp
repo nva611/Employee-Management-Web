@@ -34,7 +34,7 @@
         <label>Birth Date</label>
         <div display="flex" style="border: 1px" class="form-group">
             <input type=date style="width: 150px" class=""
-                value="" name="bDate" required="required" max="<%= java.time.LocalDate.now() %>">
+                 name="bDate" required="required" value="" max="<%= java.time.LocalDate.now() %>">
         </div>
     </fieldset> 
     
