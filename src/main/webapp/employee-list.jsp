@@ -18,10 +18,9 @@ List<Employee> listEmployee = (List<Employee>) request.getAttribute("listEmploye
 
     <header>
         <nav class="navbar navbar-expand-md navbar-dark"
-            style="background-color: tomato">
+            style="background-color: tomato;">
             <div>
-                <a href="https://www.javaguides.net" class="navbar-brand"> User
-                    Management App </a>
+                <a href="https://www.facebook.com/ON.611.02"  class="navbar-brand">My Facebook </a>
             </div>
 
             <ul class="navbar-nav">

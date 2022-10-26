@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -72,7 +73,15 @@ public class EmployeeServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		String name = request.getParameter("name");
 		String sex = request.getParameter("sex");
-		String bDate = request.getParameter("date") + "-" + request.getParameter("month") + "-" + request.getParameter("year");
+		//String bDate = request.getParameter("date") + "-" + request.getParameter("month") + "-" + request.getParameter("year");
+		Date date = null;
+		try {
+			date = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("bDate"));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String bDate = formatter.format(date);
 		String homeTown = request.getParameter("homeTown");
 		String phone = request.getParameter("phone");
 		String address = request.getParameter("address");
@@ -120,7 +129,19 @@ public class EmployeeServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		String name = request.getParameter("name");
 		String sex = request.getParameter("sex");
-		String bDate = request.getParameter("date") + "-" + request.getParameter("month") + "-" + request.getParameter("year");
+		Date date = null;
+		try {
+			date = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("bDate"));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//System.out.println("DATE: " + date);
+		//String bDate = request.getParameter("date") + "-" + request.getParameter("month") + "-" + request.getParameter("year");
+		String bDate = formatter.format(date);
+//		System.out.println("DATE req" + request.getParameter("bDate"));
+//		System.out.println("DATE 1" + date);
+//		System.out.println("DATE 2" + bDate);
 		String homeTown = request.getParameter("homeTown");
 		String phone = request.getParameter("phone");
 		String address = request.getParameter("address");

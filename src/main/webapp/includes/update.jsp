@@ -40,27 +40,35 @@
                     <% } %>
                 </fieldset> 
                 
-                <fieldset class="form-group">
-                    <label>Birth Date</label> 
-                    <div display="flex" style="border:1px" class="form-group" >     
-                        <label>Date</label>               
-                        <input type="text" style="width:80px" class="" value="<%= date.getDate() %>"
-                            name="date" required="required">
-                            
-                        <label>Month</label>
-                        <input type="text" style="width:80px" class="" value="<%= date.getMonth() + 1 %>"
-                            name="month" required="required">
-                            
-                        <label>Year</label>
-                        <input type="text" style="width:80px" class="" value="<%= date.getYear() + 1900 %>"
-                            name="year" required="required">
+                <fieldset class="form-group" style="border-width:10px">
+                    <div style="border: solid; border-width: 1px;">
+	                    <label>Your Birth Date</label> 
+	                     <div display="flex"  class="form-group" >     
+	                        <label>Date</label>               
+	                        <input type="text" style="width:80px" class="" value="<%= date.getDate() %>"
+	                            name="date" readonly>
+	                            
+	                        <label>Month</label>
+	                        <input type="text" style="width:80px" class="" value="<%= date.getMonth() + 1 %>"
+	                            name="month" readonly>
+	                            
+	                        <label>Year</label>
+	                        <input type="text" style="width:80px" class="" value="<%= date.getYear() + 1900 %>"
+	                            name="year" readonly>
+	                        </div> 
                     </div>
+                    <br>
+                    <div display="flex" style="border: solid; border-width: 1px; padding: 3px;" class="form-group">
+                    <label>Edit Birth date</label> 
+			            <input type=date style="width: 150px" class="" max="<%= java.time.LocalDate.now() %>"
+			                value="" name="bDate" required="required">
+			        </div>
                 </fieldset>
 
                 <fieldset class="form-group">
                     <label>Home Town</label> <input type="text"
                        class="form-control" value="<%= employee.getHomeTown() %>"
-                        name="homeTown">
+                        name="homeTown" required="required">
                 </fieldset>
 
                 <fieldset class="form-group">

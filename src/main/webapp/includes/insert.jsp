@@ -33,18 +33,14 @@
     <fieldset class="form-group">
         <label>Birth Date</label>
         <div display="flex" style="border: 1px" class="form-group">
-            <label>Date</label> <input type="text" style="width: 80px" class=""
-                value="" name="date" required="required"> <label>Month</label>
-            <input type="text" style="width: 80px" class="" value="" name="month"
-                required="required"> <label>Year</label> <input type="text"
-                style="width: 80px" class="" value="" name="year"
-                required="required">
+            <input type=date style="width: 150px" class=""
+                value="" name="bDate" required="required" max="<%= java.time.LocalDate.now() %>">
         </div>
     </fieldset> 
     
 	<fieldset class="form-group">
 		<label>Home Town</label> <input type="text" value=""
-			class="form-control" name="homeTown">
+			class="form-control" name="homeTown" required="required">
 	</fieldset>
 
 	<fieldset class="form-group">
